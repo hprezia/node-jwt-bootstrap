@@ -1,5 +1,5 @@
-let express = require("express");
-let app = express();
+var express = require("express");
+var app = express();
 
 app.get("/", function(req, res) {
   res.json({status: "My API is alive!"});
