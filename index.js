@@ -38,6 +38,10 @@ app.post("/token", function(req, res) {
   }
 });
 
+app.get("/user", auth.authenticate(), function(req, res) {
+  res.json(users[_.findIndex(users, {id: req.user.id})]);
+});
+
 app.listen(3000, function() {
   console.log("My API is running...");
 });
